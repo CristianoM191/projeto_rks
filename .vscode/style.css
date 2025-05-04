@@ -163,3 +163,13 @@ footer a {
   text-decoration: none;
   color: blue;
 }
+/*media quiere */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .lighty {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
