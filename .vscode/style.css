@@ -1,0 +1,164 @@
+:root {
+  --details-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --bcolor: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch: url(./moon-stars.svg);
+}
+.lighty {
+  --details-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --bcolor: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch: url(./sun.svg);
+}
+.lighty #switch button {
+  right: 0;
+  left: initial;
+}
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * /* seletor universal */ {
+  font-family: "inter";
+  color: var(--details-color);
+}
+
+#container {
+  /*height: 725px tiramos para fluídez*/
+  width: 360px;
+  padding: 0 24px;
+
+  /* centralizando a div:*/
+  margin: 56px auto 0px auto;
+}
+/*profile*/
+#profile img {
+  width: 112px;
+  /* não colocamos altura para deixar a pagina mais fluída*/
+
+  /* margin: auto; a div é um elemento block já img é inline
+   e não é possivel usar o margin auto em elementos inline*/
+}
+
+#profile {
+  text-align: center; /* as tags filhas desse elemento pai vão se centralizar */
+  padding: 24px;
+}
+#profile p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+* {
+  margin: 0;
+  padding: 0; /* removemos a margem e preenchimento automatico do navegador*/
+  box-sizing: border-box;
+}
+/* switch */
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch) no-repeat center; /* podemos por cor e imagens de fundo*/
+  border: 0px;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  transform: translateY(-50%);
+  top: 50%;
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--bcolor);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 999px;
+  padding-top: 8px;
+  padding-right: 18px;
+  padding-bottom: 8px;
+}
+
+/* links */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--bcolor);
+  /* red, green, blue, alfa, transparência */
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  /* prefixo para que o comando funcione em alguns browsers*/
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: background 0.2s;
+}
+
+/*pseudo selcetor muda o comportamento do botão ao passar o mouse*/
+ul li a:hover {
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--details-color);
+}
+
+#social-links {
+  display: flex;
+  padding: 24px, 0;
+  font-size: 24px;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  /* relogio sentido horário ou seja em cima e em baixo 24 e dos lados 0*/
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+footer {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  text-align: center;
+  font-size: 14px;
+}
+footer a {
+  text-decoration: none;
+  color: blue;
+}
